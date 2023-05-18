@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+    <style>
+
+body{
+    font-family: "Arial",sans-serif;
+}
+.container{
+    width: 100%;
+    padding: 5px;
+}
+.clear{
+    clear: both;
+}
+.text-center{
+    text-align: center;
+}
+.div100, .div50, .div25{
+    display: inline-block;
+    float: left;    
+}
+
+.div100{
+    width: 98%;
+}
+.div50{
+    width: 48%;
+}
+.div25{
+    width: 24%;
+}
+.btn{
+    padding: 8px 10px;
+    background-color: #333333;
+    border-radius: 8px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+    .div50{
+        width: 98%;
+    }
+    .div25{
+        width: 98%;
+    }
+}
+</style>
+</html>
